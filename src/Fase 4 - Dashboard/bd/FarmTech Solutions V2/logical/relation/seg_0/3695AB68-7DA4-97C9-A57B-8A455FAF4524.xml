@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Cada cultura tem 1 ou mais rotacoes" directorySegmentName="seg_0" id="3695AB68-7DA4-97C9-A57B-8A455FAF4524">
+<createdBy>Userv</createdBy>
+<createdTime>2025-06-20 19:26:13 UTC</createdTime>
+<ownerDesignName>FarmTech Solutions V2</ownerDesignName>
+<engineerTo>
+<item key="9D668767-DCAC-63B6-40B1-735A7C9E8828" value="true"/>
+</engineerTo>
+<sourcePk>C5BDBE80-9BDA-78A1-A866-FB850840FBA7</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E5EC4E34-913F-145F-0123-BBB1A58486F6</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>520B3004-F601-B2FF-1F84-D6A8FA4CA5DF</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

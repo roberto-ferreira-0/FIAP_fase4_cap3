@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="845B5377-8E4A-A91B-2E0C-8A3DC14CB7CE" name="ROTACAO_CULTURA">
+<createdBy>Userv</createdBy>
+<createdTime>2025-06-20 19:28:02 UTC</createdTime>
+<generatorID>E5EC4E34-913F-145F-0123-BBB1A58486F6</generatorID>
+<ownerDesignName>FarmTech Solutions V2</ownerDesignName>
+<abbreviation>rotacao</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_rotacao" id="68846384-335D-DEC0-CD8A-F59051827624">
+<createdBy>Userv</createdBy>
+<createdTime>2025-06-20 19:28:02 UTC</createdTime>
+<generatorID>E5E0F47F-8766-0CA6-B2DA-A003E7E7FE7D</generatorID>
+<ownerDesignName>FarmTech Solutions V2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_rotacao_cultura" id="C110BCD0-B39D-6CB9-9D73-80A87C68EAAF">
+<createdBy>Userv</createdBy>
+<createdTime>2025-06-20 19:28:02 UTC</createdTime>
+<generatorID>3313C052-417C-6AFC-577E-ED6D6F7FAD77</generatorID>
+<ownerDesignName>FarmTech Solutions V2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nro_rotacao_cultura" id="01F6325E-8F9E-F75C-99CE-98332DDDCB29">
+<createdBy>Userv</createdBy>
+<createdTime>2025-06-20 19:28:02 UTC</createdTime>
+<generatorID>862A65D6-66B0-2351-784B-7E9801DBA407</generatorID>
+<ownerDesignName>FarmTech Solutions V2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="periodo_rotacao" id="965AE5EC-CB3C-D9FA-54CC-AA818BE766BE">
+<createdBy>Userv</createdBy>
+<createdTime>2025-06-20 19:28:02 UTC</createdTime>
+<generatorID>B522942B-7DBE-3647-D23E-B677A09E78E0</generatorID>
+<ownerDesignName>FarmTech Solutions V2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6446A587-22E6-7E3D-7BB9-F894EBD76ACA" name="PK_ROTACAO_CULTURA">
+<createdBy>Userv</createdBy>
+<createdTime>2025-06-20 19:28:02 UTC</createdTime>
+<generatorID>C5BDBE80-9BDA-78A1-A866-FB850840FBA7</generatorID>
+<ownerDesignName>FarmTech Solutions V2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68846384-335D-DEC0-CD8A-F59051827624"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
