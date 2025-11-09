@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --primary: #708238;
+    --secundary: #A3B187;
+    --background: #F2F2F2;
+    --highlight: #94A187;
+    --text: #333333;
+    --border: #B0B0B0;
+    --acent: #d75f17
+}
+
+html, body{
+    height: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-flex {
+    display: flex;
+    width: 100%;
+    min-height: 95vh;
+}
+
+aside {
+    width: 25%;
+    max-width: 250px;
+    padding: 10px;
+    background-color: var(--highlight);
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.25);
+}
+
+header {
+    width: 100%
+}
+
+header h1 {
+    margin-bottom: 24px;
+    border-bottom: 1px solid white;
+}
+
+header h1 > span {
+    color: var(--acent);
+    font-size: 22px;
+    padding-bottom: .5em;
+}
+
+header.sub-header {
+    background-color: white;
+    padding: 8px;
+}
+
+header.sub-header h2 {
+    color: var(--highlight);
+}
+
+main {
+    flex: 1;
+    background-color: var(--background);
+}
+
+header {
+
+}
+
+footer {
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    outline: none;
+    height: 100%;
+    padding: 4px 16px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* CUSTOMS CLASSES*/
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    margin: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.form-container {
+    margin-bottom: 12px;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+.form-container label {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-container input[type=text], input[type=number] {
+    border: none;
+    outline: none;
+    height: 18px;
+    border-bottom: 1px solid var(--text);
+}
+
+.form-container button {
+    background-color: var(--primary);
+}
+
+form > button {
+    margin: 24px 0;
+    background-color: var(--acent);
+}
