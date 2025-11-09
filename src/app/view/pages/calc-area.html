@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Painel – Agro Digital{% endblock %}
+
+{% block content %}
+
+<header class="sub-header center">
+    <h2>Cálculo para área de plantio</h2>
+</header>
+
+<div class="card">
+    <form id="calc-area-form" action="{{ endpoint }}">
+        <div class="form-container">
+            <label for="culture">
+                <span>Selecione uma cultura</span>
+                <select name="culture" id="culture" required>
+                    <option value="">-- Selecione --</option>
+                    {% for culture in cultures %}
+                        <option value="{{ culture }}">{{ culture | capitalize }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <button id="register-culture">Cadastrar nova cultura</button>
+        </div>
+
+        <div class="form-container">
+            <label for="area">
+                <span>Digite a área total de plantio em metros quadrados</span>
+                <input type="number" name="area" id="area" required>
+            </label>
+        </div>
+
+        <button>Calcular</button>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById('calc-area-form')
+    form.addEventListener('submit', function(event) {
+        event.preventDefault()
+        const data = Object.fromEntries(new FormData(this))
+
+        if(!data.culture) {
+            alert('Selecione uma cultura')
+            return
+        }
+
+        if (isNaN( data.area) || data.area <= 0) {
+            alert("Informe uma area válida")
+            return
+        }
+
+        fetch('/api/calc-area', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        } ).then( response => {
+            if(!response.ok) throw new Error('Erro na requisição')
+            return response.json()
+        }).then(data => {
+            console.log(data)
+        }).catch(error => {
+            console.log(error)
+        })
+
+
+    })
+</script>
+
+{% endblock %}
