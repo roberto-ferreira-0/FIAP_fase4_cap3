@@ -1,0 +1,31 @@
+CREATE TABLE format_type (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  code VARCHAR(30) NOT NULL UNIQUE,
+  description VARCHAR(120)
+) ENGINE=InnoDB;
+
+CREATE TABLE product (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(120) NOT NULL UNIQUE,
+  dosage_per_m2 DECIMAL(18,4) NOT NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE culture (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(60) NOT NULL UNIQUE,
+  product_id INT NOT NULL,
+  format_id INT NOT NULL,
+  street_size_m DECIMAL(18,4) NOT NULL,
+  CONSTRAINT fk_culture_product
+    FOREIGN KEY (product_id) REFERENCES product(id)
+      ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT fk_culture_format
+    FOREIGN KEY (format_id) REFERENCES format_type(id)
+      ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB;
+
+CREATE TABLE system_param (
+  `key` VARCHAR(80) PRIMARY KEY,
+  value_str VARCHAR(4000),
+  value_num DECIMAL(18,4)
+) ENGINE=InnoDB;

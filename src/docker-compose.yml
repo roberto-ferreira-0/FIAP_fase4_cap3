@@ -10,11 +10,11 @@ services:
     environment:
       FLASK_APP: ${FLASK_APP}
       FLASK_ENV: ${FLASK_ENV}
-      ORACLE_HOST: ${ORACLE_HOST}
-      ORACLE_PORT: ${ORACLE_PORT}
-      ORACLE_SERVICE: ${ORACLE_SERVICE}
-      ORACLE_USER: ${ORACLE_USER}
-      ORACLE_PASSWORD: ${ORACLE_PASSWORD}
+      MYSQL_HOST: db
+      MYSQL_PORT: 3306
+      MYSQL_DB: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "5000:5000"
     volumes:
@@ -23,17 +23,19 @@ services:
       - db
 
   db:
-    image: gvenzl/oracle-xe:21.3.0
-    container_name: agri-oracle
+    image: mysql:8.0
+    container_name: agri-mysql
     environment:
-      ORACLE_PASSWORD: ${ORACLE_PASSWORD}
-      APP_USER: ${ORACLE_USER}
-      APP_USER_PASSWORD: ${ORACLE_PASSWORD}
-      ORACLE_CHARACTERSET: AL32UTF8
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}     # p.ex.: agro_digital
+      MYSQL_USER: ${MYSQL_USER}             # p.ex.: appuser
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}     # p.ex.: agro_pass
     ports:
-      - "1521:1521"
+      - "3307:3306"
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - oracle-data:/opt/oracle/oradata
+      - mysql-data:/var/lib/mysql
+      - ./app/db/migrations:/docker-entrypoint-initdb.d:ro
 
 volumes:
-  oracle-data:
+  mysql-data:
