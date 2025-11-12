@@ -2,3 +2,5 @@ Flask==3.0.3
 oracledb==2.3.0
 gunicorn==22.0.0
 python-dotenv==1.0.1
+sqlalchemy>=2.0
+pymysql>=1.1
