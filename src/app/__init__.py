@@ -22,7 +22,10 @@ def create_app():
     def inject_globals():
         return {
             "current_year": datetime.utcnow().year,
-            "title": "System Agro Digital"
+            "title": "System Agro Digital",
+            "menu": [
+                {'label': 'Area de plantio', 'url': '/dashboard/fase-1'}
+            ]
         }
 
     return app
