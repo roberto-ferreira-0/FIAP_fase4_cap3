@@ -62,16 +62,24 @@ def teste():
 @api_bp.route('/calc-area', methods=['POST'])
 def calc_area():
     data = request.get_json()
-    print(data.get('culture'))
-    print('\n')
-    print('-'*20)
-    print(data.get('area'))
-
     response = PlantingService.calc_and_register(
         SessionLocal(),
         data.get('culture'),
         data.get('area')
     )
 
-
     return jsonify(response)
+
+@api_bp.route('/culture', methods=['POST'])
+def create_culture():
+    data = request.get_json()
+    response = PlantingService.create_culture(
+        SessionLocal(),
+        data
+    )
+
+    if data.get('status') == 'error':
+        return jsonify(response), 500
+
+    return jsonify(response), 201
+

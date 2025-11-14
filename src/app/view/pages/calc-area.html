@@ -22,7 +22,7 @@
         <div class="form-container">
             <label for="culture-format">
                 <span>Formato</span>
-                <select name="culture-format" id="culture-format" required>
+                <select name="culture_format" id="culture-format" required>
                     <option value="">-- Selecione --</option>
                     {% for format in formats %}
                         <option value="{{format.id}}">{{format.code}}</option>
@@ -34,7 +34,7 @@
         <div class="form-container">
             <label for="culture-product">
                 <span>Produto</span>
-                <select name="culture-format" id="culture-product" required>
+                <select name="culture_product" id="culture-product" required>
                     <option value="">-- Selecione --</option>
                     {% for product in products %}
                         <option value="{{product.id}}">{{product.name}}</option>
@@ -88,7 +88,6 @@
     <h3>Áreas calculadas</h3>
   </header>
 
-  {% if calcs and calcs|length > 0 %}
     <div class="table-wrapper" style="overflow:auto;">
       <table class="table">
         <thead>
@@ -119,9 +118,6 @@
         </tbody>
       </table>
     </div>
-  {% else %}
-    <p style="margin: .5rem 0 0;">Nenhum cálculo registrado ainda.</p>
-  {% endif %}
 </div>
 
 
@@ -132,11 +128,36 @@ const newCultureContainer = document.getElementById('new-culture-container')
 const closeContainer = document.getElementById('close-container')
 const newCultureForm = document.getElementById('new-culture-form')
 
-newCultureForm.addEventListener('submit', event => {
+newCultureForm.addEventListener('submit', function(event) {
     event.preventDefault()
     event.stopImmediatePropagation()
 
     let data = Object.fromEntries(new FormData(this))
+
+    if (!data.culture_name || !data.culture_format || !data.culture_product || !data.street_size_m) {
+        alert('Dados incompletos')
+        return
+    }
+
+    fetch('/api/culture', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if ( !response.ok ) { throw new Error ("Erro na requisição")}
+        return response.json()
+    })
+    .then(data => {
+        alert(`Cultura ${data.name} cadastrada com sucesso!`)
+        window.location.reload()
+    })
+    .catch(error => {
+        console.error(error)
+        alert('Erro ao registrar cultura.')
+    })
 })
 
 const toggleNewCultureForm = () => {

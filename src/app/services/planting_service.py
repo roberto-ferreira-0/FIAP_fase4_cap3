@@ -158,10 +158,6 @@ class PlantingService:
             "created_at": str(new_row.created_at),
         }
 
-    # -----------------------------
-    # Função privada de cálculo
-    # (mesma lógica do seu script)
-    # -----------------------------
     @staticmethod
     def _calc_area_available(
         area: Decimal,
@@ -262,3 +258,30 @@ class PlantingService:
             }
             for r in rows
         ]
+
+    @staticmethod
+    def create_culture(session: Session, data: Dict):
+        try:
+            new_culture = Culture(
+                name = data.get('culture_name'),
+                product_id = int(data.get('culture_product')),
+                format_id = int(data.get('culture_format')),
+                street_size_m = int(data.get('street_size_m'))
+            )
+
+            session.add(new_culture)
+            session.commit()
+            session.refresh(new_culture)
+
+            return {
+                "id": new_culture.id,
+                "name": new_culture.name,
+                "product_id": new_culture.product_id,
+                "format_id": format_id,
+                'status': 'success'
+            }
+        except Exception as e:
+            return {
+                'status': 'error',
+                'detail': str(e)
+            }
