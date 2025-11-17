@@ -212,11 +212,9 @@ form.addEventListener('submit', function(event) {
         return response.json()
     })
     .then(data => {
-        // Procura a tabela
         const tableBody = document.querySelector('.table tbody')
         if (!tableBody) return console.warn('Tabela não encontrada.')
 
-        // Extrai data e hora
         const created = data.created_at ? new Date(data.created_at) : new Date()
         const d = created.toISOString().slice(0, 10)
         const t = created.toISOString().slice(11, 16)
@@ -233,7 +231,6 @@ form.addEventListener('submit', function(event) {
             <td>${Number(data.product_qty).toFixed(4)}</td>
             <td>${dataFormatada}</td>
         `
-        // Adiciona no topo
         tableBody.prepend(row)
         alert('Cálculo registrado com sucesso!')
         form.reset()

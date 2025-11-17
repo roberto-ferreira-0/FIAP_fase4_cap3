@@ -24,7 +24,14 @@ def create_app():
             "current_year": datetime.utcnow().year,
             "title": "System Agro Digital",
             "menu": [
-                {'label': 'Area de plantio', 'url': '/dashboard/fase-1'}
+                {
+                    'label': 'Area de plantio',
+                    'url': '/dashboard/fase-1',
+                    'sub_item': {
+                        'url': '/dashboard/fase-1/statistics',
+                        'label': 'Estatísticas'
+                    }
+                }
             ]
         }
 

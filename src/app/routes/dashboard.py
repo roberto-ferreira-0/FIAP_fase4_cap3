@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, current_app
 from app.controller.planting_calc_area_controller import PlantingCalcAreaController
 
 dashboard_bp = Blueprint('dashboard', __name__, url_prefix='/dashboard')
@@ -26,3 +26,10 @@ def phase_one():
         formats=formats,
         products=products
     )
+
+@dashboard_bp.route('/fase-1/statistics')
+def statistics():
+    stats = CONTROLLER.get_statistics()
+    print(stats)
+
+    return ''

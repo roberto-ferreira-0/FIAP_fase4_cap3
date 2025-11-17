@@ -68,6 +68,16 @@ main {
     background-color: var(--background);
 }
 
+header li {
+    display: flex;
+    flex-direction: column;
+    padding-left: 8px;
+}
+
+header li span {
+    padding-left: 8px;
+}
+
 header a {
     color: white
 }

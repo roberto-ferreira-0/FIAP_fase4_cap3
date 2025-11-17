@@ -1,4 +1,3 @@
-# app/services/planting_service.py
 from __future__ import annotations
 from decimal import Decimal, ROUND_HALF_UP
 from typing import Any, List, Dict
@@ -11,6 +10,8 @@ from app.db.models.product_model import Product
 from app.db.models.format_type_model import FormatType
 from app.db.models.system_param_model import SystemParam
 from app.db.models.planting_calculation_model import PlantingCalculation as PC
+
+from app.db.models import PlantingCalculation
 
 
 class PlantingService:
@@ -285,3 +286,33 @@ class PlantingService:
                 'status': 'error',
                 'detail': str(e)
             }
+
+    @staticmethod
+    def export_calcs_to_csv(session: Session, csv_path: str | Path) -> None:
+        stmt = (
+            select(
+                Culture.name.label('culture'),
+                PlantingCalculation.total_area_m2.label('totalArea'),
+                PlantingCalculation.planting_area_m2.label('plantingArea'),
+                PlantingCalculation.product_qty.label('productQtd'),
+            )
+            .join(Culture, Culture.id == PlantingCalculation.culture_id)
+            .join(Product, Product.id == PlantingCalculation.product_id)
+        )
+        rows = session.execute(stmt).all()
+
+        with csv_path.open('w', newline="", encoding="utf-8") as f:
+            writer = csv.DictWiter(
+                f,
+                fieldnames=['culture', 'plantingArea', 'productQtd']
+            )
+            writer.writeheader()
+            for r in rows:
+                writer.writerow(
+                    {
+                        "culture": r.culture,
+                        "totalArea": float(r.totalArea or 0),
+                        "plantingArea": float(r.plantingArea or 0),
+                        "productQtd": float(r.productQtd or 0)
+                    }
+                )
