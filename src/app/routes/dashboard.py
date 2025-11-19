@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, current_app
+from flask import Blueprint, render_template, current_app, request, jsonify
 from app.controller.planting_calc_area_controller import PlantingCalcAreaController
 
 dashboard_bp = Blueprint('dashboard', __name__, url_prefix='/dashboard')
@@ -29,7 +29,24 @@ def phase_one():
 
 @dashboard_bp.route('/fase-1/statistics')
 def statistics():
-    stats = CONTROLLER.get_statistics()
-    print(stats)
+    result = CONTROLLER.get_statistics()
 
-    return ''
+    print(result)
+
+    if result["status"] != "success":
+        return render_template(
+            "pages/statistics.html",
+            error=result["detail"],
+            stats=None,
+        )
+
+    data = result["data"]
+
+    if isinstance(data, dict):
+        data = [data]
+
+    return render_template(
+        "pages/statistics.html",
+        error=None,
+        stats=data,
+    )
