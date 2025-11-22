@@ -6,27 +6,23 @@
 
 <br>
 
-# Nome do projeto
+# Atividade Fase 4 Cap.03 
 
-## Nome do grupo
+## Grupo 16
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 5</a>
+Roberto Ferreira da Silva Junior - RM: 561131
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Tutor</a>
+- Sabrina Otoni
 ### Coordenador(a)
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
+- André Godoi
 
 
 ## 📜 Descrição
 
-*Descreva seu projeto com base no texto do PBL (até 600 palavras)*
+Este repositório contém o notebook com o código da atividade do capítulo 3 - Fase 4 da FIAP. O código contém modelos de regressão em Machine Learning usados para prever dados do dataset Seeds. O desenvolvimento segue as etapas: pré-processamento, normalização de dados, treinamento de modelos, comparação de desempenho e avaliação de resultados.
 
 
 ## 📁 Estrutura de pastas
@@ -44,12 +40,17 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 - <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups.
 
 - <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto ao longo das 7 fases.
+  Dentro de scr está o notebook com o código da atividade. O caminho da atividade nas pastas é:src/FASE4/CTWP/Cap3/
+
+- <b>
 
 - <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
 ## 🔧 Como executar o código
 
-*Acrescentar as informações necessárias sobre pré-requisitos (IDEs, serviços, bibliotecas etc.) e instalação básica do projeto, descrevendo eventuais versões utilizadas. Colocar um passo a passo de como o leitor pode baixar o seu código e executá-lo a partir de sua máquina ou seu repositório. Considere a explicação organizada em fase.*
+- Clonar o repositório
+- Abrir Jupyter Notebook ou Google Colab
+- Executar as células na sequência em que aparecem
 
 
 ## 🗃 Histórico de lançamentos
