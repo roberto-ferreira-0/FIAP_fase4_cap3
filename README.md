@@ -24,6 +24,10 @@ Roberto Ferreira da Silva Junior - RM: 561131
 
 Este repositório contém o notebook com o código da atividade do capítulo 3 - Fase 4 da FIAP. O código contém modelos de regressão em Machine Learning usados para prever dados do dataset Seeds. O desenvolvimento segue as etapas: pré-processamento, normalização de dados, treinamento de modelos, comparação de desempenho e avaliação de resultados.
 
+## 📁 Arquivos principais
+
+- atividade_cap3_fase4_FIAP_roberto_ferreira_rm561131.ipynb - Notebook da atividade
+- seeds_dataset.txt - Dataset usado na atividade. Incluso para o carregamento correto dos dados no Notebook
 
 ## 📁 Estrutura de pastas
 
@@ -39,12 +43,28 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups.
 
-- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto ao longo das 7 fases.
-  Dentro de scr está o notebook com o código da atividade. O caminho da atividade nas pastas é:src/FASE4/CTWP/Cap3/
-
-- <b>
+- <b>src</b>: Código do projeto
+    └── FASE4/
+         └── CTWP/
+              └── Cap3/
+                  ├── atividade_cap3_fase4_FIAP_roberto_ferreira_rm561131.ipynb
+                  └── seeds_dataset.txt
 
 - <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
+
+## 📊 Resultados e Conclusões
+- O dataset Seeds é bem comportado, não exigindo maiores limpezas
+- A normalização foi feita usando MinMaxScaler
+- Modelos usados: KNN, SVC e Logistic Regression
+- O KNN obteve os melhores resultados em todas as métricas e variedades.
+  Curiosamente (ou não) usar k = 1 retornou os melhores resultados, apontando para uma forte separabilidade dos dados
+- O kernel "poly" (degree=3) do SVC foi escolhido, pois retornava melhores precision e f1-score para a variedade "Kama"
+  em relação aos kernel "rbf" e "linear", além de não apresentar grandes variações métricas para as outras variedades
+- Entre os três modelos, o Logistic Regression apresentou as piores métricas para a variedade Kama, além da
+  menor acurácia de todas (ainda que nenhuma das suas métricas tenha se apresentado baixíssima). Isso possivelmente
+  nos mostra que um modelo que lide melhor com separações não-lineares dos dados talvez seja mais indicado para
+  esse dataset
+
 
 ## 🔧 Como executar o código
 
@@ -55,16 +75,7 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 ## 🗃 Histórico de lançamentos
 
-* 0.5.0 - XX/XX/2024
-    * 
-* 0.4.0 - XX/XX/2024
-    * 
-* 0.3.0 - XX/XX/2024
-    * 
-* 0.2.0 - XX/XX/2024
-    * 
-* 0.1.0 - XX/XX/2024
-    *
+* v1.0 - Atividade Fase 4 - Cap3
 
 ## 📋 Licença
 
