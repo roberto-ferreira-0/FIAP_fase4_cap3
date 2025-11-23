@@ -53,7 +53,7 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 - Modelos usados: KNN, SVC e Logistic Regression
 - O KNN obteve os melhores resultados em todas as métricas e variedades.
   Curiosamente (ou não) usar k = 1 retornou os melhores resultados, apontando para uma forte separabilidade dos dados
-- O kernel "poly" (degree=3) do SVC foi escolhido, pois retornava melhores precision e f1-score para a variedade "Kama"
+- O kernel "poly" do SVC foi escolhido, pois retornava melhores precision e f1-score para a variedade "Kama"
   em relação aos kernel "rbf" e "linear", além de não apresentar grandes variações métricas para as outras variedades
 - Entre os três modelos, o Logistic Regression apresentou as piores métricas para a variedade Kama, além da
   menor acurácia de todas (ainda que nenhuma das suas métricas tenha se apresentado baixíssima). Isso possivelmente
