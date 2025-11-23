@@ -43,9 +43,7 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups.
 
-- <b>src</b>: Código do projeto
-      - FASE4/CTWP/Cap3/atividade_cap3_fase4_FIAP_roberto_ferreira_rm561131.ipynb
-          - seeds_dataset.txt
+- <b>src</b>: FASE4/CTWP/Cap3/atividade_cap3_fase4_FIAP_roberto_ferreira_rm561131.ipynb e seeds_dataset.txt
 
 - <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
