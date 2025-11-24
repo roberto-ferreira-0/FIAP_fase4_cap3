@@ -26,8 +26,8 @@ Este repositório contém o notebook com o código da atividade do capítulo 3 -
 
 ## 📁 Arquivos principais
 
-- atividade_cap3_fase4_FIAP_roberto_ferreira_rm561131.ipynb - Notebook da atividade
-- seeds_dataset.txt - Dataset usado na atividade. Incluso para o carregamento correto dos dados no Notebook
+- atividade_cap3_fase4_FIAP_roberto_ferreira_rm561131.ipynb - Notebook da atividade. Presente na pasta "src"
+- seeds_dataset.txt - Dataset usado na atividade. Incluso para o carregamento correto dos dados no Notebook. Também presente na pasta "src"
 
 ## 📁 Estrutura de pastas
 
@@ -43,7 +43,7 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups.
 
-- <b>src</b>: FASE4/CTWP/Cap3/atividade_cap3_fase4_FIAP_roberto_ferreira_rm561131.ipynb e seeds_dataset.txt
+- <b>src</b>: Aqui está a atividade da Fase 4 Cap 3. FASE4/CTWP/Cap3/atividade_cap3_fase4_FIAP_roberto_ferreira_rm561131.ipynb e seeds_dataset.txt
 
 - <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
